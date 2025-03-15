@@ -20,12 +20,12 @@ object TeaVMBuilder {
         }
 
         // Register any classes or packages that require reflection here:
-        // TeaReflectionSupplier.addReflectionClass("gdx.jam.template.reflect")
+//        TeaReflectionSupplier.addReflectionClass("com.github.tommyettinger.textra.effects") // Do we need this?
 
         val tool = TeaBuilder.config(teaBuildConfiguration)
         tool.mainClass = "gdx.jam.template.teavm.TeaVMLauncher"
         tool.optimizationLevel = TeaVMOptimizationLevel.FULL
-        tool.setObfuscated(true)
+        tool.setObfuscated(false)
         TeaBuilder.build(tool)
     }
 }
