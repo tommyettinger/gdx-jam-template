@@ -12,9 +12,10 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.github.tommyettinger.textra.Font;
 import com.github.tommyettinger.textra.KnownFonts;
 import com.github.tommyettinger.textra.Layout;
+import gdx.jam.template.utils.BaseGame;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
-public class Main extends ApplicationAdapter {
+public class Main extends BaseGame {
     private FitViewport gameViewport;
     private ScreenViewport uiViewport;
     private Batch batch;
@@ -27,14 +28,12 @@ public class Main extends ApplicationAdapter {
 
     @Override
     public void create() {
+        super.create();
+
         gameViewport = new FitViewport(32f, 24f);
         uiViewport = new ScreenViewport();
         batch = new CpuSpriteBatch();
 
-        KnownFonts.setAssetPrefix("fonts/");
-        // needed only so KnownFonts.getFont() can load these easily...
-        KnownFonts.JSON_NAMES.add("Sancreek");
-        KnownFonts.JSON_NAMES.add("Special-Elite");
         fontWestern = KnownFonts.getFont("Sancreek", Font.DistanceFieldType.SDF).setBoldStrength(0.4f);
         fontDark = KnownFonts.getGrenze(Font.DistanceFieldType.SDF);
         fontNoir = KnownFonts.getFont("Special-Elite", Font.DistanceFieldType.SDF);

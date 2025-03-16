@@ -1,3 +1,13 @@
+buildscript {
+  repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+  }
+  dependencies {
+    classpath "com.github.tommyettinger:libgdx-texturepacker:$texturePackerVersion"
+  }
+}
+
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 eclipse.project.name = appName + '-core'
 
@@ -11,8 +21,22 @@ dependencies {
   api "com.github.tommyettinger:gdcrux:$gdcruxVersion"
   api "com.github.tommyettinger:regexodus:$regExodusVersion"
   api "com.github.tommyettinger:textratypist:$textratypistVersion"
-
   if(enableGraalNative == 'true') {
     implementation "io.github.berstanio:gdx-svmhelper-annotations:$graalHelperVersion"
+  }
+}
+import com.badlogic.gdx.tools.texturepacker.*
+var packTextures = tasks.register("packTextures") {
+  var inputDir = "$rootDir/assets/images/included"
+  var outputDir = "$rootDir/assets/images/included/packed"
+  inputs.dir(inputDir)
+  outputs.dir(outputDir)
+  doLast {
+    delete(outputDir)
+    var settings = new TexturePacker.Settings()
+    settings.combineSubdirectories = true
+    settings.maxWidth = 4096
+    settings.maxHeight = 4096
+    TexturePacker.process(settings, inputDir, outputDir, "images")
   }
 }
