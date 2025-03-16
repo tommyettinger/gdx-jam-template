@@ -9,8 +9,6 @@ buildscript {
     maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
   }
   dependencies {
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-
   }
 }
 
@@ -29,7 +27,6 @@ allprojects {
 
 configure(subprojects) {
   apply plugin: 'java-library'
-  apply plugin: 'kotlin'
   sourceCompatibility = 11
 
   // From https://lyze.dev/2021/04/29/libGDX-Internal-Assets-List/
@@ -55,14 +52,11 @@ configure(subprojects) {
   compileJava {
     options.incremental = true
   }
-  compileKotlin.compilerOptions.jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
-  compileTestKotlin.compilerOptions.jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
-  
 }
 
 subprojects {
   version = "$projectVersion"
-  ext.appName = 'JamTemplate'
+  ext.appName = 'GdxJamTemplate'
   repositories {
     mavenCentral()
     maven { url 'https://s01.oss.sonatype.org' }
@@ -71,8 +65,7 @@ subprojects {
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
     maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
     maven { url 'https://jitpack.io' }
-    maven { url 'https://teavm.org/maven/repository/' }
   }
 }
 
-eclipse.project.name = 'JamTemplate' + '-parent'
+eclipse.project.name = 'GdxJamTemplate' + '-parent'

@@ -4,7 +4,6 @@ eclipse.project.name = appName + '-core'
 dependencies {
   api "com.badlogicgames.box2dlights:box2dlights:$box2dlightsVersion"
   api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
-  api "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
   api "com.badlogicgames.gdx:gdx:$gdxVersion"
   api "com.github.tommyettinger:cringe:$cringeVersion"
   api "com.github.tommyettinger:crux:$cruxVersion"
@@ -12,7 +11,6 @@ dependencies {
   api "com.github.tommyettinger:gdcrux:$gdcruxVersion"
   api "com.github.tommyettinger:regexodus:$regExodusVersion"
   api "com.github.tommyettinger:textratypist:$textratypistVersion"
-  api "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
   if(enableGraalNative == 'true') {
     implementation "io.github.berstanio:gdx-svmhelper-annotations:$graalHelperVersion"
