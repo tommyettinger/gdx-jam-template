@@ -105,7 +105,7 @@ public class AssetLoader implements AssetErrorListener {
     }
 
     private static void loadFonts() {
-        KnownFonts.setAssetPrefix("fonts/");
+        KnownFonts.setAssetPrefix("skins/mySkin/fonts/");
         KnownFonts.JSON_NAMES.add("Sancreek");
         KnownFonts.JSON_NAMES.add("Special-Elite");
 

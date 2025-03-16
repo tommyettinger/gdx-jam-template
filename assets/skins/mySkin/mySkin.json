@@ -1,19 +1,19 @@
 {
 com.badlogic.gdx.graphics.g2d.BitmapFont: {
   Play-Bold20white: {
-    file: "../../fonts/Grenze-sdf.json.lzma"
+    file: "fonts/Grenze-sdf.json.lzma"
     scaledSize: 2
     markupEnabled: true
     flip: false
   }
   Play-Bold40white: {
-    file: "../../fonts/Grenze-sdf.json.lzma"
+    file: "fonts/Grenze-sdf.json.lzma"
     scaledSize: 4
     markupEnabled: true
     flip: false
   }
   Play-Bold59white: {
-    file: "../../fonts/Grenze-sdf.json.lzma"
+    file: "fonts/Grenze-sdf.json.lzma"
     scaledSize: 6
     markupEnabled: true
     flip: false
