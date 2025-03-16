@@ -30,6 +30,8 @@ public class Main extends ApplicationAdapter {
         gameViewport = new FitViewport(32f, 24f);
         uiViewport = new ScreenViewport();
         batch = new CpuSpriteBatch();
+
+        KnownFonts.setAssetPrefix("fonts/");
         // needed only so KnownFonts.getFont() can load these easily...
         KnownFonts.JSON_NAMES.add("Sancreek");
         KnownFonts.JSON_NAMES.add("Special-Elite");
